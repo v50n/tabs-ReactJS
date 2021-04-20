@@ -1,3 +1,11 @@
+:root{
+  --blue-color: #102A42;
+  --gray-color: #F1F5F8;
+  --green-color: #4FAFBB;
+  --gray-darken: #DAE2EC;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +13,136 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--blue-color);
+  background-color: var(--gray-color);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.title{
+  margin-top: 3rem;
+}
+
+.title > h1{
+  margin-block-end: 0em;
+}
+.title > hr{
+  width: 10%;
+  border: 2px solid var(--green-color);
+}
+
+.profile-section{
+  width: 85%;
+  margin: 2em auto 2em auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+
+.tabs-profile{
+  flex-basis: 70%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 1rem auto 0rem auto;
+}
+
+.tabs-profile > .profile{
+  flex-basis: 30%;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  padding-bottom: 0.3rem;
+}
+
+.tabs-profile > .profile:hover, .selected{
+  color: var(--green-color);
+  background-color: transparent;
+  border-bottom: 0.15rem solid var(--green-color);
+}
+
+.profile-detail{
+  flex-basis: 100%;
+  text-align: left;
+}
+
+.profile-detail > .profile-title h2{
+  font-size: 1.9rem;
+  font-weight: normal;
+  margin-block-end: 1rem;
+}
+
+.profile-name{
+  display: inline-block;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  padding: 0.375rem .75rem;
+  background-color: var(--gray-darken);
+  border-radius: 5px;
+  margin-block-end: 1rem;
+}
+
+.period, .exp-detail{
+  margin-block-end: 1rem;
+}
+
+.period{
+  color:#617D98;
+}
+
+.exp-detail{
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  align-items: center;
+}
+
+.exp-icon{
+  color: var(--green-color);
+}
+
+.exp-desc{
+  color: var(--blue-color);
+  font-size: 0.9rem;
+}
+
+@media only screen and (min-width: 900px) {
+
+  .tabs-profile{
+    flex-basis: 15%;
+    display: block;
+    margin: 0;
+    padding-top: 0.5rem;
+  }
+  .tabs-profile > .profile{
+    text-align: center;
+    padding-bottom: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+  .profile-detail > .profile-title h2{
+    margin-block-start: 0;
+  }
+
+
+  .tabs-profile > .profile:hover, .selected{
+    color: var(--green-color);
+    background-color: transparent;
+    border-left: 0.3rem solid var(--green-color);
+    border-bottom: none;
+  }
+
+
+  .tabs-profile > .profile{
+    flex-basis: 100%;
+  }
+  .profile-detail{
+    flex-basis: 80%;
+  }
+  .exp-detail{
+    display: grid;
+    grid-template-columns: 0.5fr 9fr;
+    align-items: center;
+  }
 }
